@@ -17,10 +17,21 @@ let test_contains_slice () =
   (* End of test *)
   ()
 
+let test_contains_char_slice () = 
+  let lst = ['a'; 'b'; 'c'; 'd'; 'e'] in 
+  let needle = ['b';'c'] in 
+  let bad_needle1 = ['b';'d'] in 
+
+  check bool "Lst contains ['b';'c']" true (contains_slice lst needle);
+  check bool "Lst does not contain ['b';'d']" false (contains_slice lst bad_needle1);
+  (* end of test *)
+  ()
+
 let () = 
   let open Alcotest in 
   run "Tests" [
     "List Tests", [
-      test_case "Slice tests" `Quick test_contains_slice;  
+      test_case "Integer Slice tests" `Quick test_contains_slice; 
+      test_case "Char Slice tests" `Quick test_contains_char_slice; 
     ];
   ]
