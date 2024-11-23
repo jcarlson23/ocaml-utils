@@ -1,0 +1,23 @@
+open OUnit2
+open Utilities.Lists
+
+let test_contains_slice _ =
+  
+  let lst1 = [1; 2; 3; 4; 5; 6; 7; 8; 9] in
+  let needle1 = [1; 2; 3] in 
+  let needle2 = [7; 8; 9] in
+  let bad_needle1 = [3; 2] in
+  let bad_needle2 = [2; 4] in
+
+  assert_equal true (contains_slice lst1 needle1);
+  assert_equal false (contains_slice lst1 bad_needle1);
+  assert_equal true (contains_slice lst1 needle2);
+  assert_equal false (contains_slice lst1 bad_needle2);
+  ()
+  
+let () =
+  run_test_tt_main (
+    "Test Suite" >::: [
+      "Test Contains Slice" >:: test_contains_slice;
+    ]
+  )
