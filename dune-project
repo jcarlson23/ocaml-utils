@@ -5,11 +5,11 @@
 (generate_opam_files true)
 
 (source
- (github username/reponame))
+ (github jcarlson23/git@github.com:jcarlson23/ocaml-utils.git))
 
-(authors "Author Name")
+(authors "Jared Carlson")
 
-(maintainers "Maintainer Name")
+(maintainers "Jared Carlson")
 
 (license LICENSE)
 
@@ -17,7 +17,7 @@
 
 (package
  (name utilities)
- (synopsis "A short synopsis")
+ (synopsis "This is a library of various utilities, largely meant to be around parsing the AST")
  (description "A longer description")
  (depends ocaml dune)
  (tags
